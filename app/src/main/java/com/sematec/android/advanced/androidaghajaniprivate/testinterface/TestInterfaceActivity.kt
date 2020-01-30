@@ -1,6 +1,7 @@
 package com.sematec.android.advanced.androidaghajaniprivate.testinterface
 
 import android.os.Bundle
+import android.os.Handler
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -17,18 +18,27 @@ class TestInterfaceActivity : AppCompatActivity(), TestInterface, TestInterfaceC
 
         presenter = TestInterfacePresenter(this)
 
+        val labdaFunction: (String) -> Unit = {
+            Toast.makeText(this, it, Toast.LENGTH_LONG).show()
+        }
+
         val list = arrayListOf("Ali", "Qoli", "Mamad", "Saeed", "Farhad")
 //        val adapter = TestAdapter(list, recycler.setOnClickListener {
 //
 //        })
 
 
-        val adapter = TestAdapter(list){
-            Toast.makeText(this,it,Toast.LENGTH_LONG).show()
-        }
-
-
+        val adapter = TestAdapter(labdaFunction)
         recycler.adapter = adapter
+
+        adapter.submitList(list)
+
+        Handler().postDelayed({
+            val newList = arrayListOf("Ali", "Qoli", "Mamad", "Saeed", "Farhad","Saman")
+            adapter.submitList(newList)
+        }, 2000)
+
+
 
 
         recycler.setOnClickListener(object : View.OnClickListener {
@@ -41,7 +51,7 @@ class TestInterfaceActivity : AppCompatActivity(), TestInterface, TestInterfaceC
 
         }
 
-        testLambda{ name, password ->
+        testLambda { name, password ->
             Toast.makeText(this, name + password, Toast.LENGTH_LONG).show()
             name + password
         }
@@ -56,6 +66,6 @@ class TestInterfaceActivity : AppCompatActivity(), TestInterface, TestInterfaceC
     }
 
     fun testLambda(lambdaFun: (String, Int) -> String) {
-     val text =   lambdaFun("MyPassWordIs", 123)
+        val text = lambdaFun("MyPassWordIs", 123)
     }
 }
