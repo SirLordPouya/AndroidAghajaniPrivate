@@ -15,3 +15,9 @@ mapp/src/main/java/com/sematec/android/advanced/androidaghajaniprivate/testinter
 lapp/src/main/java/com/sematec/android/advanced/androidaghajaniprivate/testinterface/TestInterfaceContract.kt,b/a/baa8d4995ad95b440c522e8d0500d7d64c43f83b
 ú
 lapp/src/main/java/com/sematec/android/advanced/androidaghajaniprivate/testinterface/TestInterfaceActivity.kt,a/1/a1c872308225f8e56e1ba2c96a766913c917d459
+î
+dapp/src/main/java/com/sematec/android/advanced/androidaghajaniprivate/testinterface/TestDiffUtils.kt,a/4/a47068e11c72b029db8442088026404a7e02c0f3
+ê
+`app/src/main/java/com/sematec/android/advanced/androidaghajaniprivate/mvvm/TestMVVMActivity.java,c/8/c84fc6e1bf64f19d43225a6153b9915d3171ac73
+ë
+aapp/src/main/java/com/sematec/android/advanced/androidaghajaniprivate/mvvm/TestMVVMViewModel.java,8/7/876f9ca062b53cf7d6b614152bb6aad4c4ba9049

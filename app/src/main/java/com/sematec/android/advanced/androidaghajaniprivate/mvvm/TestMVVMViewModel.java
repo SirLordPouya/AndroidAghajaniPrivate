@@ -30,4 +30,9 @@ public class TestMVVMViewModel extends ViewModel {
     public LiveData<String> getLiveData() {
         return liveData;
     }
+
+    @Override
+    protected void onCleared() {
+        super.onCleared();
+    }
 }
